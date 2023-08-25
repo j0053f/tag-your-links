@@ -1,8 +1,9 @@
 
-get http://localhost:4000/internal/linkpreview/?url=https://www.yahoo.com
+get http://localhost:4000/api/internal/linkpreview/?url=https://www.yahoo.com
 ###
-get http://localhost:4000/linkpreview/?url=https://yahoo.com
+get http://localhost:4000/api/linkpreview/?url=https://yahoo.com
 
-
+### 
+get http://localhost:4000/api/images/1692957242332yahoo_default_logo.png
 ###
-get http://localhost:4000/storeimage/?url=https://s.yimg.com/cv/apiv2/social/images/yahoo_default_logo.png
+get http://localhost:4000/api/storeimage/?url=https://s.yimg.com/cv/apiv2/social/images/yahoo_default_logo.png

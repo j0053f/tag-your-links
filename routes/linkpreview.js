@@ -2,7 +2,7 @@ const router = require("express").Router();
 const axios = require("axios");
 
 router.get("/linkpreview", async (req, res) => {
-  const baseUrl = `http://localhost:4000/internal`;
+  const baseUrl = `http://localhost:4000/api/internal`;
   const url = req.query.url;
 
   try {
