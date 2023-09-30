@@ -1,0 +1,8 @@
+[ ] instead of `writeFileSync` sream it:
+https://chat.openai.com/share/d791a0c5-34bb-4f9e-99c3-7941673a8ced
+
+[*] convert internal routes to function. (don't expose unneccesarry functionality to the world)
+
+[*] based on image url (or link url) check the image is already downloaded or not.
+
+[ ] improve error handling

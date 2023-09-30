@@ -1,0 +1,5 @@
+###
+GET http://localhost:4000/api/linkpreview/?url=https://yahoo.com
+
+###
+GET http://localhost:4000/api/images/a38dfc294e232c091b72b640695d66383e6373a25a5c5e32f6879b2c118dd6cd.png

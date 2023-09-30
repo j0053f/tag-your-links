@@ -1,16 +1,28 @@
 const router = require("express").Router();
-const axios = require("axios");
+const path = require("path");
+const { getLinkPreview } = require("../utils/getLinkPreview");
+const { storeImage } = require("../utils/storeImage");
+const { validateUrl } = require("../utils/linkPreview");
 
 router.get("/linkpreview", async (req, res) => {
   const baseUrl = `http://localhost:4000/api/internal`;
-  const url = req.query.url;
+  const url = req.query?.url;
+
+  if (!url) {
+    res.status(400).json({ success: false, message: "please provide URL" });
+  }
+  if (!validateUrl(url)) {
+    res.status(400).json({ success: false, message: "Invalid URL" });
+  }
 
   try {
-    const response1 = await axios.get(`${baseUrl}/linkpreview/?url=${url}`);
-    console.log("body" + response1.data);
-    const { image } = response1.data;
-    const response2 = await axios.get(`${baseUrl}/storeimage/?url=${image}`);
-    res.json({ ...response1.data, image: response2.data.imagePath });
+    const data = await getLinkPreview(url);
+    console.log(data);
+    const image = await storeImage(
+      data.image,
+      path.join(__dirname, "../images")
+    );
+    res.json({ ...data, image });
   } catch (error) {
     console.log(error);
   }
