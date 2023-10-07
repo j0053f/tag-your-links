@@ -1,5 +1,31 @@
-###
+### 1-register user
+POST  http://localhost:4000/api/user
+Content-Type: application/json
+
+{"username":"admin", "password":"password"}
+
+### 2 get linkpreview
 GET http://localhost:4000/api/linkpreview/?url=https://yahoo.com
 
-###
+### 2.1
+GET http://localhost:4000/api/linkpreview/?url=https://www.shahrekhabar.com/
+
+### 3 save linkpreview
+POST http://localhost:4000/api/linkpreview
+Authorization: Basic YWRtaW46cGFzc3dvcmQ=
+Content-Type: application/json
+
+{"id": "1696643834400-537", "tags":["adfad", "dafa"]}
+
+### get user data
+GET http://localhost:4000/api/linkpreview/admin
+Authorization: Basic YWRtaW46cGFzc3dvcmQ=
+
+### get image
 GET http://localhost:4000/api/images/a38dfc294e232c091b72b640695d66383e6373a25a5c5e32f6879b2c118dd6cd.png
+
+
+###
+GET http://localhost:4000/api/linkpreview?url=https://ya
+###
+GET http://localhost:4000/api/linkpreview?url=https://yahoo.com
